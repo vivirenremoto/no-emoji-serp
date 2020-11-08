@@ -1,0 +1,32 @@
+{
+    "name": "No Emoji SERP",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Remove affiliate websites on Google result that contains some kind of emoji, ascii symbols and specific tld domains (.top, .online) as well.",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_title": "Visit project website"
+    },
+    "background": {
+        "scripts": [
+            "action.js"
+        ]
+    },
+    "permissions": [
+        "https://www.google.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.google.com/*"
+            ],
+            "js": [
+                "background.js"
+            ]
+        }
+    ]
+}
