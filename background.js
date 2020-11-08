@@ -1,3 +1,5 @@
+
+
 function isEmoji(str) {
     // source https://stackoverflow.com/a/39652525
     var ranges = [
@@ -37,8 +39,9 @@ for (var i = 0; i < total; i++) {
     if (found) {
 
         // remove zero result
-        if (i == 0) {
-            item = document.querySelector('.g-blk');
+        var zero_result = document.querySelector('.g-blk');
+        if (i == 0 && zero_result) {
+            item = zero_result;
         }
 
         item.classList.add('emoji_found');
@@ -48,7 +51,6 @@ for (var i = 0; i < total; i++) {
     }
 
 }
-
 
 var items_found = document.querySelectorAll(".emoji_found");
 var total_found = items_found.length;
